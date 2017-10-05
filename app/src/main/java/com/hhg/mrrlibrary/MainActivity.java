@@ -1,19 +1,18 @@
 package com.hhg.mrrlibrary;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 
-import com.hhg.mrrlibrary.utils.LogUtils;
-import com.hhg.mrrlibrary.utils.ToastUtils;
+import com.hhg.mrrlibrary.comm.BaseActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        LogUtils.i("MRRLibrary");
-        ToastUtils.showShort("MRRLibrary");
+    }
+
+    @Override
+    protected void newPresenter() {
+
     }
 }

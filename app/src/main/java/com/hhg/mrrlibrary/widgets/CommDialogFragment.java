@@ -18,10 +18,6 @@ import android.widget.TextView;
 
 import com.hhg.mrrlibrary.R;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 /**
  * Created by hhg on 2017/7/23.
  * description  : 通用的DialogFragment
@@ -31,17 +27,11 @@ import butterknife.Unbinder;
 
 public class CommDialogFragment extends DialogFragment {
 
-    @BindView(R.id.tvTitle)
-    TextView tvTitle;
-    @BindView(R.id.tvContent)
-    TextView tvContent;
-    @BindView(R.id.btnNegative)
-    Button btnNegative;
-    @BindView(R.id.btnPositive)
-    Button btnPositive;
-    @BindView(R.id.viewSpace)
-    View viewSpace;
-    Unbinder unbinder;
+    private TextView tvTitle;
+    private TextView tvContent;
+    private Button btnNegative;
+    private Button btnPositive;
+    private View viewSpace;
 
     private static String strContent;
     private static boolean isShowCancel;
@@ -76,14 +66,18 @@ public class CommDialogFragment extends DialogFragment {
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));//注意此处  setBackgroundDrawable 必须设置
 //        setLayout必须 在 setContentView之后, 调用;并且  这里的-1,-2可以设置为任意高度;
         getDialog().getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);//这2行,和上面的一样,注意顺序就行;
-
-        unbinder = ButterKnife.bind(this, view);
         return view;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        tvTitle = view.findViewById(R.id.tvTitle);
+        tvContent = view.findViewById(R.id.tvContent);
+        btnNegative = view.findViewById(R.id.btnNegative);
+        btnPositive = view.findViewById(R.id.btnPositive);
+        viewSpace = view.findViewById(R.id.viewSpace);
+
         tvTitle.setText("提 示");
         tvContent.setText(strContent + "");
         btnNegative.setText("取 消");
@@ -130,7 +124,6 @@ public class CommDialogFragment extends DialogFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
     }
 
 

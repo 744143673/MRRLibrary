@@ -17,10 +17,6 @@ import com.hhg.mrrlibrary.R;
 import com.hhg.mrrlibrary.defaultimpl.DefaultCommViewImpl;
 import com.hhg.mrrlibrary.utils.ToastUtils;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 /**
  * author  : hhg
  * e-mail  : hhg673@foxmail.com
@@ -31,17 +27,11 @@ import butterknife.Unbinder;
 
 public abstract class BaseFragment extends Fragment {
 
-    @BindView(R.id.frameLayoutContent)
-    FrameLayout frameLayoutContent;
-    @BindView(R.id.tvTitle)
-    TextView tvTitle;
-    Unbinder unbinder;
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
-    @BindView(R.id.imgBtnLeft)
-    ImageButton imgBtnLeft;
-    @BindView(R.id.imgBtnRight)
-    ImageButton imgBtnRight;
+
+    private TextView tvTitle;
+    private Toolbar toolbar;
+    private ImageButton imgBtnLeft;
+    private ImageButton imgBtnRight;
 
     private ICommView iCommView;
 
@@ -49,16 +39,23 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_base, container, false);
-        frameLayoutContent = (FrameLayout) rootView.findViewById(R.id.frameLayoutContent);
+        FrameLayout frameLayoutContent = (FrameLayout) rootView.findViewById(R.id.frameLayoutContent);
         if (inflateViewLayoutId() != null)
             frameLayoutContent.addView(inflater.inflate(inflateViewLayoutId(), null));
-        unbinder = ButterKnife.bind(this, rootView);
         return rootView;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        initViews(view);
+    }
+
+    protected  void initViews(View view){
+        tvTitle = view.findViewById(R.id.tvTitle);
+        toolbar = view.findViewById(R.id.toolbar);
+        imgBtnLeft = view.findViewById(R.id.imgBtnLeft);
+        imgBtnRight = view.findViewById(R.id.imgBtnRight);
         initToolbar();
         tvTitle.setText(setToolbarTitle());
         setImgLeftAndImgRight(imgBtnLeft, imgBtnRight);
@@ -67,7 +64,6 @@ public abstract class BaseFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
     }
 
     private void initToolbar() {

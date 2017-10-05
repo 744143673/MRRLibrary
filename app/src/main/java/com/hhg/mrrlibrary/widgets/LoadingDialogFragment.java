@@ -19,7 +19,6 @@ import com.hhg.mrrlibrary.comm.Constant;
 
 import java.lang.ref.WeakReference;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -35,8 +34,8 @@ public class LoadingDialogFragment extends DialogFragment {
 
 
     public static final String TAG = "LoadingDialogFragment";
-    @BindView(R.id.tvLoading)
-    TextView tvLoading;
+
+    private TextView tvLoading;
     Unbinder unbinder;
 
     private CountDownTimerAPP countDownTimerAPP; //倒计时控件
@@ -68,6 +67,7 @@ public class LoadingDialogFragment extends DialogFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        tvLoading = view.findViewById(R.id.tvLoading);
     }
 
     @Override
