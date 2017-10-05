@@ -1,10 +1,10 @@
-apply plugin: 'com.android.library'//将apply plugin: 'com.android.application'改为apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'//将apply plugin: 'com.android.application'改为apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
-//        applicationId "com.hhg.mrrlibrary"//注释applicationId
+        applicationId "com.hhg.mrrlibrary"//注释applicationId
         minSdkVersion 18
         targetSdkVersion 26
         versionCode 1
