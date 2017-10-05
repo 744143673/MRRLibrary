@@ -51,7 +51,7 @@ public abstract class BaseFragment extends Fragment {
         initViews(view);
     }
 
-    protected  void initViews(View view){
+    protected void initViews(View view) {
         tvTitle = view.findViewById(R.id.tvTitle);
         toolbar = view.findViewById(R.id.toolbar);
         imgBtnLeft = view.findViewById(R.id.imgBtnLeft);
@@ -73,8 +73,12 @@ public abstract class BaseFragment extends Fragment {
         if (supportActionBar != null)
             supportActionBar.setDisplayShowTitleEnabled(false);
         setHasOptionsMenu(true); // Fragment 接管Toolbar
+
+        if (setToolbarColor() != null)
+            toolbar.setBackgroundColor(setToolbarColor());
     }
 
+    protected abstract Integer setToolbarColor();
 
     /**
      * 返回LayoutId
