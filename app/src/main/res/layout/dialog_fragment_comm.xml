@@ -19,7 +19,7 @@
     insideInset：表示在padding区域内并且插入在view后面
     outsideOverlay：表示在padding区域外并且覆盖在view上，推荐这个
     outsideInset：表示在padding区域外并且插入在view后面-->
-    <com.yinshang.hsroad.widgets.MaxHeightScrollView xmlns:sv="http://schemas.android.com/apk/res-auto"
+    <com.hhg.mrrlibrary.widgets.MaxHeightScrollView xmlns:sv="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_margin"
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:lineSpacingMultiplier="1.2"
             tools:text="content" />
-    </com.yinshang.hsroad.widgets.MaxHeightScrollView>
+    </com.hhg.mrrlibrary.widgets.MaxHeightScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
