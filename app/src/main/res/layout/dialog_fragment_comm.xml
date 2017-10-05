@@ -15,6 +15,7 @@
         android:layout_gravity="center"
         tools:text="标题" />
 
+
     <!--insideOverlay：默认值，表示在padding区域内并且覆盖在view上
     insideInset：表示在padding区域内并且插入在view后面
     outsideOverlay：表示在padding区域外并且覆盖在view上，推荐这个
