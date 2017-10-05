@@ -13,8 +13,8 @@ public class Constant {
      * http 相关常量定义
      */
     public static class HttpConstant {
-        static String IP = "www.sc-ums.com";
-        static String PORT = "8087";
+        public static String IP = "www.sc-ums.com";
+        public static String PORT = "8087";
         public static String base_url = "http://" + IP + ":" + PORT + "/ScUmsPay/";
 
         private static final int TIME_OUT = 5; //超时时间  60秒

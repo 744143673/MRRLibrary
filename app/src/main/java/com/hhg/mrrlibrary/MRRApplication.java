@@ -12,7 +12,7 @@ import com.hhg.mrrlibrary.tools.ActivityManager;
  * version : 1.0.0
  */
 
-public class MRRApplication extends Application {
+public  class MRRApplication extends Application {
     private static MRRApplication instance;
 
     @Override
