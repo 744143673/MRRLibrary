@@ -2,9 +2,9 @@ package com.hhg.mrrlibrary;
 
 import android.os.Bundle;
 
-import com.hhg.mrrlibrary.comm.BaseActivity;
+import com.hhg.mrrlibrary.comm.MRRActivity;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends MRRActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

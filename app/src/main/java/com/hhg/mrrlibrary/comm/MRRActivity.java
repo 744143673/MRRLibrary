@@ -25,7 +25,7 @@ import com.hhg.mrrlibrary.utils.ResUtils;
  * version      : 1.0.0
  */
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class MRRActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

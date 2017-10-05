@@ -25,7 +25,7 @@ import com.hhg.mrrlibrary.utils.ToastUtils;
  * version : 1.0.0
  */
 
-public abstract class BaseFragment extends Fragment {
+public abstract class MRRFragment extends Fragment {
 
 
     private TextView tvTitle;
