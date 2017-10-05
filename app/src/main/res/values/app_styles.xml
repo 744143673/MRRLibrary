@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Toolbar.Base-->
+    <style name="Toolbar.Base" parent="Widget.AppCompat.Toolbar">
+        <item name="contentInsetStart">0dp</item><!-- toolbar 默认的左边距-->
+        <item name="contentInsetStartWithNavigation">0dp</item>
+        <item name="titleMargin">0dp</item>
+    </style>
+
+    <!--TextViewBase-->
+    <style name="TextViewNormal">
+        <item name="android:textSize">@dimen/font_normal</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@null</item>
+        <item name="android:alpha">0.87</item>
+    </style>
+
+    <!--TextView.Large.White-->
+    <style name="TextViewNormal.Large.White" parent="TextViewNormal">
+        <item name="android:textSize">@dimen/font_large</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!--TextView.Large.White-->
+    <style name="TextViewNormal.Large.Black" parent="TextViewNormal">
+        <item name="android:textSize">@dimen/font_large</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--TextView.Large-->
+    <style name="TextViewNormal.Large" parent="TextViewNormal">
+        <item name="android:textSize">@dimen/font_large</item>
+    </style>
+
+    <!--TextView.Larger-->
+    <style name="TextViewNormal.Larger" parent="TextViewNormal">
+        <item name="android:textSize">@dimen/font_larger</item>
+    </style>
+
+    <!--TextView.Small-->
+    <style name="TextViewNormal.Small" parent="TextViewNormal">
+        <item name="android:textSize">@dimen/font_small</item>
+        <item name="android:alpha">0.54</item>
+    </style>
+
+    <!--TextView.Caption-->
+    <style name="TextViewNormal.Caption" parent="TextViewNormal">
+        <item name="android:textSize">@dimen/font_caption</item>
+        <item name="android:alpha">0.54</item>
+    </style>
+
+    <!--ButtonBase-->
+    <style name="Button.Base" parent="TextViewNormal">
+        <item name="android:background">@null</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!--ButtonBase.Large-->
+    <style name="Button.Base.Large" parent="TextViewNormal">
+        <item name="android:background">@null</item>
+        <item name="android:textSize">@dimen/font_large</item>
+    </style>
+
+    <!--ViewBase-->
+    <style name="ViewLine">
+        <item name="android:background">@color/gray</item>
+        <item name="android:alpha">0.87</item>
+    </style>
+
+
+    <!--TabItem-->
+    <style name="TabItemStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!--DialogFragment 动画-->
+    <style name="up_down_animation" parent="android:Animation">
+        <item name="@android:windowEnterAnimation">@anim/up_in</item>
+        <item name="@android:windowExitAnimation">@anim/down_out</item>
+    </style>
+</resources>
+
+    <!--@符号表明了我们应用的资源是前边定义过的(或者在前一个项目中或者在Android 框架中)。
+    问号？表明了我们引用的资源的值在当前的主题当中定义过-->

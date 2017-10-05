@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="AppTheme.Base">
+        <!--第一个属性很明显就是可以拉升到顶部状态栏  并且定义顶部状态栏透明，
+        这样你的页面就是一整张了，没有上面电池背景条之类的了，整个页面看上去会好很多-->
+        <item name="android:windowTranslucentStatus">true</item>
+        <!--第二个属性，是设置你的虚拟键透明，这个虚拟键就是返回和菜单键等，
+        现在有的手机会放到屏幕上，而有的是没有的。到这个时候，如果你的手机有虚拟键的话，你会发现问题来了，你会发现你的页面拉伸到了虚拟键的下面，也就是页面填充了整个屏幕，不留一点空间了，如果你是列表的话，那么无所谓，并不影响操作和页面效果，如果你的是最下面有按钮的页面的话，你会发现这玩意就是一个坑啊，因为你的按钮填充到了下面，
+        你根本按不到，而且如果你设置了透明属性的话，你会发现虚拟键和你最下面的按钮都重合在一起-->
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+</resources>

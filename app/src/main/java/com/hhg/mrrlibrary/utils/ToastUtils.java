@@ -6,7 +6,7 @@ import android.os.Looper;
 import android.view.Gravity;
 import android.widget.Toast;
 
-import com.yinshang.hsroad.HSRoadApplication;
+import com.hhg.mrrlibrary.MRRApplication;
 
 
 /**
@@ -43,7 +43,7 @@ public class ToastUtils {
         if (toast == null) {
             if (string == null)
                 string = "";
-            toast = Toast.makeText(HSRoadApplication.getInstance().getApplicationContext(), string, duration);
+            toast = Toast.makeText(MRRApplication.getInstance().getApplicationContext(), string, duration);
         } else {
             toast.setText(string);
         }

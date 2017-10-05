@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">MRRLibrary</string>
+    <string name="app_name">MRR</string>
+    <string name="action_settings">action_settings</string>
+
+    <string name="text_load">加载中…</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    //setting
+    <string name="btn_text_ip">设置IP</string>
+    <string name="btn_text_port">设置port</string>
 </resources>

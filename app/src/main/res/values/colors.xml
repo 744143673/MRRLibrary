@@ -3,4 +3,19 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!--安卓4.0以后整体界面风格简约扁平，称之为HOLO风格,在android design里面有详细的阐述，包括 holo dark 和 holo light -->
+    //app colors
+    <color name="red">@android:color/holo_red_light</color>
+    <color name="orange">#6495ED</color>
+    <color name="green">@android:color/holo_green_light</color>
+    <color name="blue">#4169E1</color>
+    <color name="purple">@android:color/holo_purple</color><!--紫色-->
+    <color name="black">@android:color/black</color>
+    <color name="white">@android:color/white</color>
+    <color name="gray">#ddd</color>
+    <color name="trans_gray">#aa777777</color>
+    <color name="transparent">@android:color/transparent</color>
+
+    <color name="green_deep">#3A5FCD</color>
 </resources>
