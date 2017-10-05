@@ -74,11 +74,13 @@ public abstract class BaseFragment extends Fragment {
             supportActionBar.setDisplayShowTitleEnabled(false);
         setHasOptionsMenu(true); // Fragment 接管Toolbar
 
-        if (setToolbarColor() != null)
-            toolbar.setBackgroundColor(setToolbarColor());
+
+        toolbar.setBackgroundColor(setToolbarColor());
     }
 
-    protected abstract Integer setToolbarColor();
+    protected Integer setToolbarColor() {
+        return getResources().getColor(R.color.colorPrimaryDark);
+    }
 
     /**
      * 返回LayoutId
