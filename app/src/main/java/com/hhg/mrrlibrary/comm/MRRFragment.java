@@ -75,10 +75,11 @@ public abstract class MRRFragment extends Fragment {
         setHasOptionsMenu(true); // Fragment 接管Toolbar
 
 
-        toolbar.setBackgroundColor(setToolbarColor());
+        toolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+        setToolbarColor(toolbar);
     }
 
-    protected Integer setToolbarColor() {
+    protected Integer setToolbarColor(Toolbar toolbar) {
         return getResources().getColor(R.color.colorPrimaryDark);
     }
 
