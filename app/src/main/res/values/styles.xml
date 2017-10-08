@@ -21,8 +21,6 @@
 
         <item name="toolbarStyle">@style/Toolbar.Base</item>
 
-        <item name="android:listDivider">@drawable/divider</item>
-
         <!--系统默认字体大小和颜色-->
         <item name="android:textAppearanceSmall">@style/TextAppearanceSmall.Base</item>
 

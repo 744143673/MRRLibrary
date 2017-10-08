@@ -35,7 +35,6 @@ public class LoadingDialogFragment extends DialogFragment {
 
     public static final String TAG = "LoadingDialogFragment";
 
-    private TextView tvLoading;
     Unbinder unbinder;
 
     private CountDownTimerAPP countDownTimerAPP; //倒计时控件
@@ -67,7 +66,7 @@ public class LoadingDialogFragment extends DialogFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        tvLoading = view.findViewById(R.id.tvLoading);
+
     }
 
     @Override
@@ -80,14 +79,11 @@ public class LoadingDialogFragment extends DialogFragment {
     @Override
     public void onResume() {
         super.onResume();
-        countStart();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        if (countDownTimerAPP != null)
-            countCancel();
         if (getDialog() != null)
             dismiss();
     }
@@ -98,12 +94,4 @@ public class LoadingDialogFragment extends DialogFragment {
         unbinder.unbind();
     }
 
-    public void countStart() {
-        countDownTimerAPP = CountDownTimerAPP.instance(new WeakReference<>(tvLoading), Constant.CountDownTimerConstant.millisInFuture, Constant.CountDownTimerConstant.countDownInterval);
-        countDownTimerAPP.start();
-    }
-
-    public void countCancel() {
-        countDownTimerAPP.cancel();
-    }
 }

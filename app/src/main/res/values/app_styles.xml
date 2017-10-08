@@ -79,6 +79,10 @@
         <item name="@android:windowEnterAnimation">@anim/up_in</item>
         <item name="@android:windowExitAnimation">@anim/down_out</item>
     </style>
+
+    <style name="Widget_GifView">
+
+    </style>
 </resources>
 
     <!--@符号表明了我们应用的资源是前边定义过的(或者在前一个项目中或者在Android 框架中)。
