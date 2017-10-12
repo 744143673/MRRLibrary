@@ -6,6 +6,7 @@ import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -16,6 +17,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 
 import com.hhg.mrrlibrary.R;
+import com.hhg.mrrlibrary.utils.FragToActUtils;
 import com.hhg.mrrlibrary.utils.ResUtils;
 
 
@@ -25,7 +27,7 @@ import com.hhg.mrrlibrary.utils.ResUtils;
  * version      : 1.0.0
  */
 
-public abstract class MRRActivity extends AppCompatActivity {
+public abstract class MRRActivity<P extends IBasePresenter, V extends Fragment> extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,13 +36,21 @@ public abstract class MRRActivity extends AppCompatActivity {
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
-        newPresenter();
+
+        V fragment = createFragment();
+        FragToActUtils.addFragmentToActivity(fragment, getSupportFragmentManager(), R.id.contentFrame);
+        createPresenter(fragment).start();
     }
 
     /**
      * 创建Presenter实例
      */
-    protected abstract void newPresenter();
+    protected abstract P createPresenter(V f);
+
+    /**
+     * 创建Fragment实例
+     */
+    protected abstract V createFragment();
 
     @Override
     public void setContentView(int layoutResId) {

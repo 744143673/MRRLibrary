@@ -1,7 +1,9 @@
 package com.hhg.mrrlibrary;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 
+import com.hhg.mrrlibrary.comm.IBasePresenter;
 import com.hhg.mrrlibrary.comm.MRRActivity;
 
 public class MainActivity extends MRRActivity {
@@ -12,7 +14,13 @@ public class MainActivity extends MRRActivity {
     }
 
     @Override
-    protected void newPresenter() {
-
+    protected IBasePresenter createPresenter(Fragment f) {
+        return null;
     }
+
+    @Override
+    protected Fragment createFragment() {
+        return null;
+    }
+
 }
