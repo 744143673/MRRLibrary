@@ -39,7 +39,7 @@ public abstract class MRRActivity<P extends IBasePresenter, V extends Fragment> 
 
         V fragment = createFragment();
         FragToActUtils.addFragmentToActivity(fragment, getSupportFragmentManager(), R.id.contentFrame);
-        createPresenter(fragment).start();
+        createPresenter(fragment);
     }
 
     /**
