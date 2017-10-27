@@ -78,6 +78,7 @@
     <style name="up_down_animation" parent="android:Animation.Dialog">
         <item name="android:windowEnterAnimation">@anim/up_in</item>
         <item name="android:windowExitAnimation">@anim/down_out</item>
+
     </style>
 
     <style name="Widget_GifView">
