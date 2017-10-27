@@ -20,7 +20,7 @@ public class MainActivity extends MRRActivity {
 
     @Override
     protected Fragment createFragment() {
-        return null;
+        return new Fragment();
     }
 
 }
