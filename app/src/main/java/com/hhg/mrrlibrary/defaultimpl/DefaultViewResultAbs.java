@@ -73,4 +73,5 @@ public abstract class DefaultViewResultAbs<T> implements IViewResult<T> {
         if (iCommView.isActive())
             iCommView.hideLoading();
     }
+
 }
