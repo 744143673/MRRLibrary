@@ -35,18 +35,18 @@ public abstract class DefaultViewResultAbs<T> implements IViewResult<T> {
     }
 
     @Override
-    public void successViewResult(T t) {
-        if (t == null) {
+    public void successViewResult(T success) {
+        if (success == null) {
             LogUtils.e("结果为null ");
             failViewResult("数据格式错误，结果为null ");
             return;
         }
-        LogUtils.i("successViewResult()--> " + t.toString());
+        LogUtils.i("successViewResult()--> " + success.toString());
 
         //统一的结果解析；
         try {
-            if (t instanceof String) {
-                ResultBean<String> resultBean = new Gson().fromJson(t.toString(), new TypeToken<ResultBean<String>>() {
+            if (success instanceof String) {
+                ResultBean<String> resultBean = new Gson().fromJson(success.toString(), new TypeToken<ResultBean<String>>() {
                 }.getType());
                 //请求状态码判断
                 for (EStatus eStatus : EStatus.values())
@@ -60,11 +60,11 @@ public abstract class DefaultViewResultAbs<T> implements IViewResult<T> {
     }
 
     @Override
-    public void failViewResult(@NonNull String s) {
-        LogUtils.e("failViewResult()--> " + s);
+    public void failViewResult(@NonNull String fail) {
+        LogUtils.e("failViewResult()--> " + fail);
         if (iCommView.isActive()) {
             iCommView.hideLoading();
-            iCommView.showPointDialog("" + s, false, null);
+            iCommView.showPointDialog("" + fail, false, null);
         }
     }
 
