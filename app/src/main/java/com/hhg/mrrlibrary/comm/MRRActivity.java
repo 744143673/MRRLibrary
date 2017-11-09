@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.ColorRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 
+import com.hhg.barlibrary.kernel.ImmersionBar;
 import com.hhg.mrrlibrary.R;
 import com.hhg.mrrlibrary.utils.FragToActUtils;
 import com.hhg.mrrlibrary.utils.ResUtils;
@@ -42,6 +44,23 @@ public abstract class MRRActivity<P extends IBasePresenter, V extends Fragment> 
         createPresenter(fragment);
     }
 
+    @Override
+    public void onContentChanged() {
+        super.onContentChanged();
+        ImmersionBar
+                .with(this)
+                .barColor(barColor())
+                .init();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ImmersionBar
+                .with(this)
+                .destroy();
+    }
+
     /**
      * 创建Presenter实例
      */
@@ -52,22 +71,14 @@ public abstract class MRRActivity<P extends IBasePresenter, V extends Fragment> 
      */
     protected abstract V createFragment();
 
-    @Override
-    public void setContentView(int layoutResId) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            FrameLayout rootView = new FrameLayout(this);
-            rootView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-            View contentView = LayoutInflater.from(this).inflate(layoutResId, rootView, false);
-            contentView.setFitsSystemWindows(true);
-            rootView.addView(contentView);
-            View statusBarView = new View(this);
-            statusBarView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ResUtils.getStatusBarHeight(this)));
-            statusBarView.setBackgroundColor(ResUtils.getThemeAttrColor(this, R.attr.colorPrimaryDark));
-            rootView.addView(statusBarView);
-            super.setContentView(rootView);
-        } else {
-            super.setContentView(layoutResId);
-        }
+    /**
+     * 设置Bar颜色
+     *
+     * @return color
+     */
+    @ColorRes
+    protected int barColor() {
+        return R.color.colorPrimary;
     }
 
     @Override
