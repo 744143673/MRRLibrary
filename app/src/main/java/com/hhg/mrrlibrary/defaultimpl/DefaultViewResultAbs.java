@@ -57,6 +57,7 @@ public abstract class DefaultViewResultAbs<T> implements IViewResult<T> {
                 Result result = (Result) success;
                 if (!result.geteStatus().getValue().equals(EStatus.SUCCESS.getValue())) {
                     failViewResult(result.getMsg());
+                    return;
                 }
             }
         } catch (Exception e) {
