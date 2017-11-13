@@ -18,6 +18,7 @@ import com.hhg.mrrlibrary.utils.LogUtils;
  * version : 1.0.0
  */
 
+@SuppressWarnings("ALL")
 public abstract class DefaultViewResultAbs<T> implements IViewResult<T> {
 
     private ICommView iCommView;
@@ -62,7 +63,13 @@ public abstract class DefaultViewResultAbs<T> implements IViewResult<T> {
             }
         } catch (Exception e) {
             e.printStackTrace();
+            return;
         }
+        withDataBean(success);
+    }
+
+    @Override
+    public void withDataBean(T success) {
 
     }
 

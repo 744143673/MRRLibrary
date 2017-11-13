@@ -25,6 +25,14 @@ public interface IViewResult<T> {
      */
     void successViewResult(T success);
 
+
+    /**
+     * 解析数据后 data 不为null 是调用
+     *
+     * @param success 泛型数据
+     */
+    void withDataBean(T success);
+
     /**
      * 数据 请求、处理失败 + 隐藏框架框。
      *
