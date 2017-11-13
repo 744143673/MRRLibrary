@@ -1,43 +1,42 @@
 package com.hhg.mrrlibrary.result;
 
-import android.support.annotation.NonNull;
-
 /**
  * author  : hhg
  * e-mail  : hhg673@foxmail.com
  * date    : 2017/9/1.
- * desc    : 请求状态码  枚举
+ * desc    :
  * version : 1.0.0
  */
 
 public enum EStatus {
-    SUCCESS("00", "获取数据成功"),
-    FAIL("01", "获取数据失败"),
-    UNKNOWN("02", "未知错误");
-
-
+    SUCCESS("00", "访问成功");
     private String value;
-    private String dec;
+    private String msg;
 
-    EStatus(@NonNull String value, @NonNull String dec) {
+    EStatus(String value, String msg) {
         this.value = value;
-        this.dec = dec;
+        this.msg = msg;
     }
 
-    public String getDec() {
-        return dec;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setDec(@NonNull String dec) {
-        this.dec = dec;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
     public String getValue() {
         return value;
     }
 
-    public void setValue(@NonNull String value) {
+    public void setValue(String value) {
         this.value = value;
     }
 
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

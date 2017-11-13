@@ -3,12 +3,11 @@ package com.hhg.mrrlibrary.defaultimpl;
 import android.support.annotation.NonNull;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import com.hhg.mrrlibrary.comm.ICommView;
 import com.hhg.mrrlibrary.comm.IViewResult;
 import com.hhg.mrrlibrary.result.EStatus;
-import com.hhg.mrrlibrary.result.ResultBean;
+import com.hhg.mrrlibrary.result.Result;
 import com.hhg.mrrlibrary.utils.LogUtils;
 
 /**
@@ -46,12 +45,19 @@ public abstract class DefaultViewResultAbs<T> implements IViewResult<T> {
         //统一的结果解析；
         try {
             if (success instanceof String) {
-                ResultBean<String> resultBean = new Gson().fromJson(success.toString(), new TypeToken<ResultBean<String>>() {
+                Result<String> resultBean = new Gson().fromJson(success.toString(), new TypeToken<Result<String>>() {
                 }.getType());
                 //请求状态码判断
-                for (EStatus eStatus : EStatus.values())
-                    if (resultBean.getStatus().equals(eStatus.getValue()));
-//                        iCommView.showToastShort("" + eStatus.getDec());
+                if (!resultBean.geteStatus().getValue().equals(EStatus.SUCCESS.getValue())) {
+                    failViewResult(resultBean.getMsg());
+                    return;
+                }
+            }
+            if (success instanceof Result) {
+                Result result = (Result) success;
+                if (!result.geteStatus().getValue().equals(EStatus.SUCCESS.getValue())) {
+                    failViewResult(result.getMsg());
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -3,7 +3,6 @@ package com.hhg.mrrlibrary.retorfit;
 import com.hhg.mrrlibrary.MRRApplication;
 import com.hhg.mrrlibrary.comm.Constant;
 import com.hhg.mrrlibrary.retorfit.interceptor.CacheInterceptor;
-import com.hhg.mrrlibrary.retorfit.interceptor.HeadersInterceptor;
 import com.hhg.mrrlibrary.retorfit.interceptor.LoggingInterceptor;
 
 import java.io.File;
@@ -35,7 +34,6 @@ public class OkHttpClientManager extends OkHttpClient {
 //                .addNetworkInterceptor(new LoggingInterceptor())
 //                .addNetworkInterceptor(new CacheInterceptor())//添加的是网络拦截器，他会在在request和resposne是分别被调用一次，
                 .addInterceptor(new CacheInterceptor())//添加的是aplication拦截器，他只会在response被调用一次
-               .addInterceptor(new HeadersInterceptor())
                 .cache(cache)
                 .build();
     }
