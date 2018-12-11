@@ -13,7 +13,7 @@ public class Constant {
      * http 相关常量定义
      */
     public static class HttpConstant {
-        public static String IP = "www.sc-ums.com";
+        public static String IP = "www.baidu.com";
         public static String PORT = "8087";
         public static String base_url = "http://" + IP + ":" + PORT + "/ScUmsPay/";
 
