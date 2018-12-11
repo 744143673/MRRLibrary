@@ -14,8 +14,8 @@ public class Constant {
      */
     public static class HttpConstant {
         public static String IP = "www.baidu.com";
-        public static String PORT = "8087";
-        public static String base_url = "http://" + IP + ":" + PORT + "/ScUmsPay/";
+        public static String PORT = "8585";
+        public static String base_url = "http://" + IP + ":" + PORT + "/something/";
 
         private static final int TIME_OUT = 5; //超时时间  60秒
         public static final int CONNECT_TIME_OUT = TIME_OUT;
