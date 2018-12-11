@@ -13,7 +13,7 @@ import retrofit2.http.Query;
 
 public interface ApiService {
 
-    @POST("LsStaffChkServlet")
+    @POST("anything")
     Flowable<String> login(@Query("id") String id, @Query("data") String data);
 
 }
